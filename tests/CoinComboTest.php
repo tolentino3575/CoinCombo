@@ -56,5 +56,31 @@
             //Assert
             $this->assertEquals(array(3, 1), $result);
         }
+
+        function test_CoinCombo_divideNickel()
+        {
+            //Arrange
+            $test_CoinCombo = new CoinCombo;
+            $input = 90;
+
+            //Act
+            $result = $test_CoinCombo->divideOutput($input);
+
+            //Assert
+            $this->assertEquals(array(3, 1, 1), $result);
+        }
+
+        function test_CoinCombo_dividePenny()
+        {
+            //Arrange
+            $test_CoinCombo = new CoinCombo;
+            $input = 93;
+
+            //Act
+            $result = $test_CoinCombo->divideOutput($input);
+
+            //Assert
+            $this->assertEquals(array(3, 1, 1, 3), $result);
+        }
     }
 ?>
