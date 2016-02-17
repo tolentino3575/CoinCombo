@@ -30,7 +30,8 @@ class CoinCombo
 
                 if($remainder % 5 == 0){
                     $nickel = $remainder / 5;
-                    array_push($change, $nickel);
+                    $penny = 0;
+                    array_push($change, $nickel, $penny);
 
                 }elseif($remainder % 5 !== 0){
                     $nickel = floor($remainder / 5);
