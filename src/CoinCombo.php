@@ -11,7 +11,8 @@ class CoinCombo
     {
         $change = array();
         if ($input % 25 == 0){
-            return $input / 25;
+            $quarter = ($input / 25);
+            array_push($change, $quarter);
 
         }elseif($input % 25 !== 0){
             $quarter = floor($input / 25);
@@ -39,7 +40,8 @@ class CoinCombo
                 }
             }
         }
-        return $change;
+
+        return $change[0] . ' quarter(s), ' . $change[1] . ' dime(s), ' . $change[2] . ' nickel(s), and ' . $change[3] . ' pennies!';
     }
 
 

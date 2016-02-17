@@ -8,15 +8,16 @@
 
   $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path'=>__DIR__."/../views"));
 
+  $app->get("/", function() use ($app) {
+      return $app['twig']->render('index.html.twig', array('resultAmt' => NULL));
+  });
 
+  $app->get("/result", function() use ($app){
+     $my_coinCombo = new CoinCombo;
+     $initialAmt = $my_coinCombo->divideOutput($_GET['amount']);
+     return $app['twig']->render('index.html.twig', array('resultAmt' => $initialAmt));
+  });
 
-
-
-
-
-
-
-
-
+  return $app;
 
 ?>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Coin Combo Calculator</h1>
+            <form action="/result">
+                <label for="amount">Enter some amount of change!<small>Less than 100 pls!</small></label><br><br>
+                <input id="amount" name="amount" type="number">
+                <button type="submit">Click</button>
+            </form><br>
+
+            {% if resultAmt is not empty %}
+                {{ resultAmt }}
+            {% endif %}
+    </body>
+</html>
